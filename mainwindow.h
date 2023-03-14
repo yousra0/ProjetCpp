@@ -5,7 +5,7 @@
 #include<QMessageBox>
 #include <QApplication>
 
-#include "visite.h"
+#include "equipement.h"
 
 namespace Ui {
 class MainWindow;
@@ -31,8 +31,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Visite v;
-    Visite *ve;
+    Equipement E;
+    Equipement *Eq;
 };
 
 #endif // MAINWINDOW_H

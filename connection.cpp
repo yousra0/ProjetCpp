@@ -11,7 +11,7 @@ bool Connection::createconnect()
 
     db.setDatabaseName("test");
     db.setUserName("system");//inserer nom de l'utilisateur
-    db.setPassword("hammoud1");//inserer mot de passe de cet utilisateur
+    db.setPassword("29218186");//inserer mot de passe de cet utilisateur
 
     if (db.open())
     test=true;

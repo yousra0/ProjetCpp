@@ -68,7 +68,7 @@ color: rgb(242, 237, 228);</string>
 color: rgb(242, 237, 228);</string>
      </property>
      <property name="text">
-      <string>dateVisite</string>
+      <string>Date D'achat</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_3">
@@ -85,7 +85,7 @@ color: rgb(242, 237, 228);</string>
 color: rgb(242, 237, 228);</string>
      </property>
      <property name="text">
-      <string>kilometrageVisite</string>
+      <string>Nom d'equi</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_4">
@@ -102,27 +102,10 @@ color: rgb(242, 237, 228);</string>
 color: rgb(242, 237, 228);</string>
      </property>
      <property name="text">
-      <string>prixVisite</string>
+      <string>Statut</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_5">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>330</y>
-       <width>131</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font:  75 24pt &quot;Times New Roman&quot;;
-color: rgb(242, 237, 228);</string>
-     </property>
-     <property name="text">
-      <string>resultatVisite</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="le_id">
+    <widget class="QLineEdit" name="leid">
      <property name="geometry">
       <rect>
        <x>250</x>
@@ -152,7 +135,7 @@ QLineEdit::focus{  color: black ;
 background-color:white;}</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="le_dateVisite">
+    <widget class="QLineEdit" name="dateaa">
      <property name="geometry">
       <rect>
        <x>250</x>
@@ -182,7 +165,7 @@ QLineEdit::focus{  color: black ;
 background-color:white;}</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="le_kilometrageVisite">
+    <widget class="QLineEdit" name="lenomE">
      <property name="geometry">
       <rect>
        <x>250</x>
@@ -212,7 +195,7 @@ QLineEdit::focus{  color: black ;
 background-color:white;}</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="le_prixVisite">
+    <widget class="QLineEdit" name="lestatut">
      <property name="geometry">
       <rect>
        <x>250</x>
@@ -242,44 +225,11 @@ QLineEdit::focus{  color: black ;
 background-color:white;}</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="le_resultatVisite">
-     <property name="geometry">
-      <rect>
-       <x>250</x>
-       <y>340</y>
-       <width>113</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLineEdit{
-    background-color: white;
-    box-shadow: 2px 0.5px 5px 1px inset black;
-    border-radius: 5px;
-    width: 70%;
-    padding-right: 10px;
-    padding-left: 10px;
-    text-align: left;
-    color: #000;
-    font-size:inherit;
-    font-family: Arial, Helvetica, sans-serif;  
-    font-weight:normal;
-    font-variant:normal;
-}
-QLineEdit::hover{  color: black ;
-background-color:orange;}
-QLineEdit::focus{  color: black ;
-background-color:white;}
-
-
-</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pb_ajouter">
      <property name="geometry">
       <rect>
-       <x>220</x>
-       <y>530</y>
+       <x>270</x>
+       <y>420</y>
        <width>141</width>
        <height>51</height>
       </rect>
@@ -325,8 +275,8 @@ QPushButton::pressed
     <widget class="QPushButton" name="pb_modifier">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>590</y>
+       <x>80</x>
+       <y>500</y>
        <width>141</width>
        <height>51</height>
       </rect>
@@ -608,7 +558,7 @@ QPushButton::pressed
      <string>Chercher</string>
     </property>
    </widget>
-   <widget class="QTableView" name="tab_visite">
+   <widget class="QTableView" name="tabequipement">
     <property name="geometry">
      <rect>
       <x>470</x>
@@ -707,7 +657,7 @@ background-color:white;}</string>
      <x>0</x>
      <y>0</y>
      <width>1314</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

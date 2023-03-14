@@ -27,15 +27,15 @@ CONFIG += c++11
 
 
 SOURCES += \
+    equipement.cpp \
         main.cpp \
         mainwindow.cpp \
-    connection.cpp \
-    visite.cpp
+    connection.cpp
 
 HEADERS += \
+    equipement.h \
         mainwindow.h \
-    connection.h \
-    visite.h
+    connection.h
 
 FORMS += \
         mainwindow.ui
