@@ -30,12 +30,12 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     connection.cpp \
-    vehicule.cpp
+    visite.cpp
 
 HEADERS += \
         mainwindow.h \
     connection.h \
-    vehicule.h
+    visite.h
 
 FORMS += \
         mainwindow.ui

@@ -5,7 +5,7 @@
 #include<QMessageBox>
 #include <QApplication>
 
-#include "vehicule.h"
+#include "visite.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,9 +24,15 @@ private slots:
 
     void on_pb_supprimer_clicked();
 
+    void on_pb_modifier_clicked();
+    void on_pushButton_rechercher_clicked();
+
+
+
 private:
     Ui::MainWindow *ui;
-    Vehicule v;
+    Visite v;
+    Visite *ve;
 };
 
 #endif // MAINWINDOW_H
