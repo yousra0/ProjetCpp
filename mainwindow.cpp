@@ -3,7 +3,9 @@
 #include "ui_mainwindow.h"
 #include<QMessageBox>
 #include <QApplication>
-//#include<QIntValidator>
+#include<QIntValidator>
+#include <QSettings>
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -30,12 +32,13 @@ void MainWindow::on_pb_ajouter_clicked()
     QString prenom=ui->le_prenom->text();
     QString type_immatriculation=ui->type_immatriculation->text();
    int numImmatriculation=ui->le_numImmatriculation->text().toInt();
+    /*QDate Date = ui->dateTimeEdit_A->date();*/
 
     //instancier un objet de la classe reservation
     //en utilisant les informations saisies dans l'interface
     Reservation R(id, nom, prenom, type_immatriculation, numImmatriculation);
 
-    //insérer l'objet piste instancié dans la table piste
+    //insérer l'objet reservation instancié dans la table reservation
     //et récupérer la valeur de retour de query.exec()
     bool test=R.ajouter();
 
@@ -48,6 +51,8 @@ void MainWindow::on_pb_ajouter_clicked()
 
         //Actualiser le tableau apres l'ajout
         ui->tab_reservation->setModel(R.afficher());
+
+
     }
     //si la requete non exécuté => QMessageBox::critical
     else
@@ -125,6 +130,8 @@ void MainWindow::on_pb_modifier_clicked()
         QString prenom=ui->le_prenom->text();
       QString type_immatriculation=ui->type_immatriculation->text();
         int numImmatriculation=ui->le_numImmatriculation->text().toInt();
+        /*QDate Dat=ui->dateTimeEdit_A->date();*/
+
 
         // Vérifier que l'identifiant saisi est valide
         if (id <= 0)
@@ -132,6 +139,12 @@ void MainWindow::on_pb_modifier_clicked()
             QMessageBox::warning(this, "Erreur", "Veuillez entrer une valeur numérique valide pour l'identifiant.");
             return;
         }
+        // Vérifier que les champs obligatoires sont remplis
+            if (nom .isEmpty()|| prenom .isEmpty() || numImmatriculation <= 0 ||type_immatriculation.isEmpty() )
+            {
+                QMessageBox::warning(this, "Erreur", "Veuillez remplir tous les champs obligatoires.");
+                return;
+            }
 
         // Vérifier que l'identifiant existe dans la table
         QSqlQuery query;
@@ -182,3 +195,39 @@ void MainWindow::on_pb_modifier_clicked()
                                      "Click Cancel to exit"), QMessageBox::Cancel);
         }
 }
+void MainWindow::on_pb_rechercher_clicked()
+{
+    // Récupérer la valeur de recherche et supprimer les espaces inutiles
+    QString valeur = ui->le_recherche->text().trimmed();
+
+    // Vérifier si la valeur de recherche est vide
+    if (valeur.isEmpty())
+    {
+        // Afficher un message d'erreur
+        QMessageBox::warning(this, "Recherche", "Veuillez saisir une valeur de recherche.");
+        // Quitter la fonction sans exécuter la recherche
+        return;
+    }
+
+    // Appeler la fonction de recherche dans la classe Reservation et récupérer le modèle de résultats
+    QSqlQueryModel *model = R.rechercher(valeur);
+
+    // Vérifier si aucun résultat n'a été trouvé
+    if (model->rowCount() == 0)
+    {
+        // Afficher un message d'information
+        QMessageBox::information(this, "Recherche", "Aucun résultat trouvé.");
+    }
+    else
+    {
+        // Créer un message avec le nombre de résultats trouvés
+        QString message = QString("%1 résultat(s) trouvé(s).").arg(model->rowCount());
+        // Afficher un message d'information avec le nombre de résultats trouvés
+        QMessageBox::information(this, "Recherche", message);
+        // Définir le modèle de résultats dans la table
+        ui->tab_reservation->setModel(model);
+        // Trier les résultats par ordre croissant de l'id
+        ui->tab_reservation->sortByColumn(0, Qt::AscendingOrder);
+    }
+}
+

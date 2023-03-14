@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include<QMessageBox>
 #include <QApplication>
+#include <QSettings>
+
 
 #include "reservation.h"
 
@@ -25,6 +27,10 @@ private slots:
     void on_pb_supprimer_clicked();
 
     void on_pb_modifier_clicked();
+    void on_pb_rechercher_clicked();
+
+
+
 
 private:
     Ui::MainWindow *ui;

@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/new/prefix1">
-        <file>My project-1 (4).png</file>
+        <file>logo (2).png</file>
+        <file>icons8-supprimer-pour-toujours-32 (1).png</file>
     </qresource>
 </RCC>
