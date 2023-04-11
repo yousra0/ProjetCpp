@@ -1,10 +1,14 @@
-#ifndef Visite_H
-#define Visite_H
+#ifndef VISITE_H
+#define VISITE_H
 #include <QString>
 #include<QSqlQueryModel>
 #include<QMessageBox>
 #include <QApplication>
 #include <QSqlQuery>
+#include <QtCharts/QPieSlice>
+#include <QtCharts/QChartView>
+#include <QtWidgets/QMainWindow>
+
 
 
 class Visite
@@ -15,18 +19,18 @@ public:
 
   //Getters
   int getid();
-  int getdateVisite();
-  int getkilometrageVisite();
-  int getprixVisite();
-  QString getresultatVisite();
+  int getdatevisite();
+  int getkilometrage();
+  int getprixvisite();
+  QString getresultat();
 
 
   //Setters
   void setid(int);
-  void setdateVisite(int);
-  void setkilometrageVisite(int);
-  void setprixVisite(int);
-  void setresultatVisite(QString);
+  void setdatevisite(int);
+  void setkilometrage(int);
+  void setprixvisite(int);
+  void setresultat(QString);
 
 
   //Les fonctions
@@ -36,12 +40,22 @@ public:
   // Déclaration de la méthode rechercher
   bool modifier(int);
   bool rechercher(int);
-  QSqlQueryModel *chercher(int);
+  //QSqlQueryModel *chercher(int);
+  QSqlQueryModel * rechercher(QString);
+
+ // QSqlQueryModel * rechercher(QString valeur);
+  QSqlQueryModel * triID();
+  QSqlQueryModel * triNOM();
+  QSqlQueryModel * triIDdesc();
+  QSqlQueryModel * triNOMdesc();
+
+
+
 
 
 private:
-    int id,dateVisite, kilometrageVisite,prixVisite;
-    QString resultatVisite;
+    int id,datevisite,kilometrage,prixvisite;
+    QString resultat;
 };
 
 
