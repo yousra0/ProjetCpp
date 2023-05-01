@@ -24,9 +24,14 @@ public:
   bool ajouter();
   QSqlQueryModel *afficher();
   bool supprimer(int);
-  bool rechercher(int );
-  bool modifier(int);
-  QSqlQueryModel *chercher(int );
+  bool rechercher(int id);
+  bool modifier(int id);
+  QSqlQueryModel *chercher(int);
+  QSqlQueryModel * rechercher(QString valeur);
+  QSqlQueryModel * triID();
+  QSqlQueryModel * triNOM();
+  QSqlQueryModel * triIDdesc();
+  QSqlQueryModel * triNOMdesc();
 
 private:
     int id,dateA;
