@@ -5,8 +5,10 @@
 #-------------------------------------------------
 
 QT       += core gui sql
-
-
+QT       += core gui charts
+QT += axcontainer
+QT += printsupport
+QT += serialport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Atelier_Connexion
@@ -27,14 +29,18 @@ CONFIG += c++11
 
 
 SOURCES += \
+    arduino.cpp \
         main.cpp \
         mainwindow.cpp \
     connection.cpp \
+    qrcode.cpp \
     vehicule.cpp
 
 HEADERS += \
+    arduino.h \
         mainwindow.h \
     connection.h \
+    qrcode.h \
     vehicule.h
 
 FORMS += \
