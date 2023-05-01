@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui sql
+QT       += core gui sql network multimedia multimediawidgets charts printsupport widgets axcontainer serialport
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -30,12 +31,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     connection.cpp \
-    vehicule.cpp
+    notifications.cpp \
+    visite.cpp
 
 HEADERS += \
         mainwindow.h \
     connection.h \
-    vehicule.h
+    notifications.h \
+    visite.h
 
 FORMS += \
         mainwindow.ui
